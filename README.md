@@ -26,6 +26,12 @@ BlackDoc is a two-column [Jekyll](http://jekyllrb.com) theme that's ideal for we
 * Now compatible with Jekyll 3.x
 * Two-column layout with scrolling sidebar content
 * Ideal for websites that require  master-detail view of content
+* List of latest posts
+* Tag cloud
+
+## Warnings
+
+- Only use underscore characters in tags!
 
 ## Quick Start
 
