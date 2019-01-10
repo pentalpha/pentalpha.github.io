@@ -16,13 +16,13 @@ Como é de se esperar, essa é uma tarefa computacionalmente complexa e intensiv
 
 As principais ferramentas que vamos utilizar aqui:
 
-1. [prefetch](MontagemNGS.md#1-prefetch) 
-2. [fastq-dump](MontagemNGS.md#2-fastq-dump)  
-3. [Option A: spades](MontagemNGS.md#3-option-a-spades)
-4. [Option B: abyss](MontagemNGS.md#4-option-b-abyss)
-5. [Option C: SOAPdenovo](MontagemNGS.md#5-option-c-SOAPdenovo)
-5. [Option C: Velvet](MontagemNGS.md#6-option-d-velvet)
-6. [Quast e Redundans: Analizando e melhorando os resultados](MontagemNGS.md#7-quast-e-redundans)
+1. [prefetch](#1-prefetch) 
+2. [fastq-dump](#2-fastq-dump)  
+3. [Option A: spades](#3-option-a-spades)
+4. [Option B: abyss](#4-option-b-abyss)
+5. [Option C: SOAPdenovo](#5-option-c-SOAPdenovo)
+5. [Option C: Velvet](#6-option-d-velvet)
+6. [Quast e Redundans: Analizando e melhorando os resultados](#7-quast-e-redundans)
 
 Antes de prosseguir, abra um terminal para uma máquina Linux e entre na sua pasta pessoal. Então, crie uma pasta chamada "ngs-assembly" para guardar os arquivos gerados nesta tarefa.
 
@@ -75,8 +75,6 @@ Agora vamos concatenar os arquivos fastq em dois arquivos, o das reads esquerdas
 
 O último comando, "tree .", é uma dica de como ver não só os arquivos e sub-diretórios no diretório atual, como o conteúdo dos sub-diretórios.
 
-[For more info on fastq-dump](fastq-dump.md)
-
 # 3. Option A: spades
 
 Spades é um montador de genomas russo escrito em Python, bastante utilizado. Como todo montador deve(ria) fazer, ele recebe os fastqs e cria um arquivo .fasta com os contigs montados.
@@ -108,8 +106,6 @@ O seguinte comando é um truque rápido para calcular o número de sequências e
     cat <nome_do_arquivo>.fasta | grep ">" | wc -l
 ```
 
-[For more info on spades](spades.md)
-
 # 4. Option B: ABySS
 
 O montador com o nome mais legal.
@@ -140,13 +136,11 @@ Caso ainda não esteja instalado:
 
 Foram produzidos 19998 contigs (Rhodo-contigs.fa) e 19842 scaffolds (Rhodo-scaffolds.fa).
 
-[For more info on abyss](abyss.md)
-
 # 5. Option C: SOAPdenovo
 
 ## 5.1. Installation
 
-[missing information]
+#TODO
 
 ## 5.2. Using it
 
@@ -196,8 +190,6 @@ Usar o velvet consiste de 2 passos: velveth para fazer o "hashing" dos reads e v
     $ more velvet/contigs.fa
 ```
 
-[For more info](velvet.md)
-
 # 7. Quast e Redundans
 Copie tudo para um diretório só:
 ```sh
@@ -220,8 +212,6 @@ Você pode baixar a partir da [sourceforge](http://quast.sourceforge.net/quast).
 ```
 
 Ele vai gerar "reports" em diversos formatos (html, tsv, txt...). Inclusive é gerada uma página do icarus, que pode ser aberta usando um web-browser.
-
-[For more info](quast.md)
 
 ## 7.2. redundans.py:
 O redundans.py é uma pipeline para fechar gaps e reduzir a redundância dos contigs de uma montagem.

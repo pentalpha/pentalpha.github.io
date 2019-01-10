@@ -2,6 +2,9 @@
 markdown:         kramdown
 highlighter:      rouge
 
+#dirs
+tag_dir: tag
+
 # Setup
 title:            pentalpha blog
 tagline:          A personal blog on Bioinformatics (PT-BR and ENG-US)
