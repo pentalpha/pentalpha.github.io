@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Pandas dataframe tricks &middot; pentalpha blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/blackdoc.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          pentalpha blog
+        </a>
+      </h1>
+      <p class="lead">A personal blog on bioinformatics and other things // Um blog pessoal incluindo, entre outras coisas, tutoriais sobre bioinformática</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/styles.html">Styles</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+      <hr>
+      <p class="sidebar-nav-item">Posts:</a>
+      
+      <ul>
+        
+          <li>
+            <a href="/2019/01/10/pandas.html">10 Jan 2019 - Pandas dataframe tricks</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/montagem-ngs.html">10 Jan 2019 - Montagem NGS de Genomas</a>
+          </li>
+        
+      </ul>
+      <hr>
+      <span class="sidebar-nav-item">Tag Cloud</span>
+      
+      
+      <span class="site-tag">
+          <a href="/tag/abyss/"
+              style="font-size: 84%">
+                  abyss (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/data-science/"
+              style="font-size: 84%">
+                  data science (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/en-us/"
+              style="font-size: 84%">
+                  en us (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/fasta/"
+              style="font-size: 84%">
+                  fasta (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/fastq/"
+              style="font-size: 84%">
+                  fastq (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/genoma/"
+              style="font-size: 84%">
+                  genoma (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/montagem/"
+              style="font-size: 84%">
+                  montagem (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/ngs/"
+              style="font-size: 84%">
+                  ngs (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/pandas/"
+              style="font-size: 84%">
+                  pandas (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/pt-br/"
+              style="font-size: 84%">
+                  pt br (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/python/"
+              style="font-size: 84%">
+                  python (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/quast/"
+              style="font-size: 84%">
+                  quast (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/redundans/"
+              style="font-size: 84%">
+                  redundans (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/spades/"
+              style="font-size: 84%">
+                  spades (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/velvet/"
+              style="font-size: 84%">
+                  velvet (1)
+          </a>
+      </span>
+      
+      <hr>
+      <a class="sidebar-nav-item" href="https://github.com/pentalpha/pentalpha.github.io">GitHub project</a>
+      <a class="sidebar-nav-item" href="https://github.com/karloespiritu/blackdoc">Theme</a>
+      <span class="sidebar-nav-item">Currently v2.0.1</span>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Pandas dataframe tricks</h1>
+  <span class="post-date">10 Jan 2019</span>
+  
+      <footer>
+        <span>Tags:</span>
+          
+            <span class="site-tag">
+              <a href="/tag/pandas"
+                  style="font-size: 80%">
+                      pandas; 
+              </a>
+            </span>
+          
+            <span class="site-tag">
+              <a href="/tag/data-science"
+                  style="font-size: 80%">
+                      data-science; 
+              </a>
+            </span>
+          
+            <span class="site-tag">
+              <a href="/tag/python"
+                  style="font-size: 80%">
+                      python; 
+              </a>
+            </span>
+          
+            <span class="site-tag">
+              <a href="/tag/en-us"
+                  style="font-size: 80%">
+                      en-us; 
+              </a>
+            </span>
+          
+      </footer>
+  
+  <h1 id="what-is-it">What is it?</h1>
+
+<p>No, we are not talking about the species of cute large asian mammals, we are talking about the (equally cute) Python library.</p>
+
+<p>It’s a Python library with a DataFrame class that’s VERY useful for a lot of things.
+Everything you can do with a Spreadsheet can be done better with Panda’s DataFrame.</p>
+
+<h1 id="import">Import</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div>
+<p>You may also need to import numpy:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+<h1 id="load-csvtsv-files">Load CSV/TSV Files</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separatorChar</span><span class="p">)</span>
+</code></pre></div></div>
+<h1 id="write-the-modified-dataframe">Write the modified DataFrame</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separatorChar</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">writeUselessNewIndexesOnFileAndMakeAHugeMess</span><span class="p">)</span>
+</code></pre></div></div>
+<h1 id="create-a-new-empty-dataframe-and-then-fill-it-with-new-data">Create a new empty DataFrame and then fill it with new data</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">indexes</span><span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">row</span><span class="p">[</span><span class="s">'indexName'</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+    <span class="n">row</span><span class="p">[</span><span class="s">'dataAboutIndex] = getDataFrom(index)</span><span class="err">
+</span><span class="s">    # etc, etc</span><span class="err">
+</span><span class="s">    rows.append(row)</span><span class="err">
+</span><span class="s">df = pd.DataFrame(rows)</span><span class="err">
+</span><span class="s">#and for columns with an specific order:</span><span class="err">
+</span><span class="s">df = pd.DataFrame(rows, columns['</span><span class="n">indexName</span><span class="s">', '</span><span class="n">dataAboutIndex</span><span class="s">'])</span><span class="err">
+</span></code></pre></div></div>
+
+<h1 id="utilities">Utilities:</h1>
+<p>Some essential tricks for DataFrames</p>
+
+<h2 id="create-new-columns">Create new columns</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'column'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'anotherColumn'</span><span class="p">]</span> <span class="o">=</span> <span class="s">''</span>
+</code></pre></div></div>
+<h2 id="iterate-row-by-row">Iterate row by row</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1">#do something
+</span></code></pre></div></div>
+<h2 id="assign-values-to-specific-cell">Assign values to specific cell</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">rowIndex</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">newValue</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="call-a-lambda-for-every-row-faster-than-a-for-loop">Call a lambda for every row (faster than a for loop)</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#axis=1 for rows, no columns
+</span></code></pre></div></div>
+<p>Can be used to assign values to a whole column too:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'column'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="drop-columns">Drop columns</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'columnX'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="drop-rows-which-are-not-included-in-a-set-of-indexes">Drop rows which are not included in a set of indexes</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sliced</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">indexes_to_keep</span><span class="p">))</span>
+</code></pre></div></div>
+<h2 id="create-a-column-with-the-mean-value-of-other-columns">Create a column with the mean value of other columns</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'median'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">columnsSet</span><span class="p">))]</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># or
+</span><span class="n">df</span><span class="p">[</span><span class="s">'median'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># also workds for .mean() and .quantile(x)
+</span></code></pre></div></div>
+
+</div>
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2019/01/10/montagem-ngs.html">
+            Montagem NGS de Genomas
+            <small>10 Jan 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>

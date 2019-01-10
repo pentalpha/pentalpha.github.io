@@ -113,6 +113,26 @@
         
       
         
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
       
       <hr>
       <p class="sidebar-nav-item">Posts:</a>
@@ -120,19 +140,11 @@
       <ul>
         
           <li>
+            <a href="/2019/01/10/pandas.html">10 Jan 2019 - Pandas dataframe tricks</a>
+          </li>
+        
+          <li>
             <a href="/2019/01/10/montagem-ngs.html">10 Jan 2019 - Montagem NGS de Genomas</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/14/introducing-blackdoc.html">14 May 2015 - Introducing BlackDoc</a>
-          </li>
-        
-          <li>
-            <a href="/2012/02/07/example-content.html">07 Feb 2012 - Example content</a>
-          </li>
-        
-          <li>
-            <a href="/2012/02/06/whats-jekyll.html">06 Feb 2012 - What's Jekyll?</a>
           </li>
         
       </ul>
@@ -144,6 +156,20 @@
           <a href="/tag/abyss/"
               style="font-size: 84%">
                   abyss (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/data-science/"
+              style="font-size: 84%">
+                  data science (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/en-us/"
+              style="font-size: 84%">
+                  en us (1)
           </a>
       </span>
       
@@ -183,6 +209,27 @@
       </span>
       
       <span class="site-tag">
+          <a href="/tag/pandas/"
+              style="font-size: 84%">
+                  pandas (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/pt-br/"
+              style="font-size: 84%">
+                  pt br (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/python/"
+              style="font-size: 84%">
+                  python (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
           <a href="/tag/quast/"
               style="font-size: 84%">
                   quast (1)
@@ -210,9 +257,7 @@
           </a>
       </span>
       
-
-      <!--<a class="sidebar-nav-item" href="https://github.com/pentalpha/pentalpha.github.io/archive/master.zip">Download</a>
-      <hr>-->
+      <hr>
       <a class="sidebar-nav-item" href="https://github.com/pentalpha/pentalpha.github.io">GitHub project</a>
       <a class="sidebar-nav-item" href="https://github.com/karloespiritu/blackdoc">Theme</a>
       <span class="sidebar-nav-item">Currently v2.0.1</span>
@@ -228,12 +273,205 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2019/01/10/pandas.html">
+        Pandas dataframe tricks
+      </a>
+    </h1>
+
+    <span class="post-date">10 Jan 2019</span>
+    
+        <footer>
+          <span>Tags:</span>
+            
+              <span class="site-tag">
+                <a href="/tag/pandas"
+                    style="font-size: 80%">
+                        pandas; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/data-science"
+                    style="font-size: 80%">
+                        data-science; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/python"
+                    style="font-size: 80%">
+                        python; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/en-us"
+                    style="font-size: 80%">
+                        en-us; 
+                </a>
+              </span>
+            
+        </footer>
+    
+
+    <h1 id="what-is-it">What is it?</h1>
+
+<p>No, we are not talking about the species of cute large asian mammals, we are talking about the (equally cute) Python library.</p>
+
+<p>It’s a Python library with a DataFrame class that’s VERY useful for a lot of things.
+Everything you can do with a Spreadsheet can be done better with Panda’s DataFrame.</p>
+
+<h1 id="import">Import</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div>
+<p>You may also need to import numpy:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+<h1 id="load-csvtsv-files">Load CSV/TSV Files</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separatorChar</span><span class="p">)</span>
+</code></pre></div></div>
+<h1 id="write-the-modified-dataframe">Write the modified DataFrame</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separatorChar</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">writeUselessNewIndexesOnFileAndMakeAHugeMess</span><span class="p">)</span>
+</code></pre></div></div>
+<h1 id="create-a-new-empty-dataframe-and-then-fill-it-with-new-data">Create a new empty DataFrame and then fill it with new data</h1>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">indexes</span><span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">row</span><span class="p">[</span><span class="s">'indexName'</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+    <span class="n">row</span><span class="p">[</span><span class="s">'dataAboutIndex] = getDataFrom(index)</span><span class="err">
+</span><span class="s">    # etc, etc</span><span class="err">
+</span><span class="s">    rows.append(row)</span><span class="err">
+</span><span class="s">df = pd.DataFrame(rows)</span><span class="err">
+</span><span class="s">#and for columns with an specific order:</span><span class="err">
+</span><span class="s">df = pd.DataFrame(rows, columns['</span><span class="n">indexName</span><span class="s">', '</span><span class="n">dataAboutIndex</span><span class="s">'])</span><span class="err">
+</span></code></pre></div></div>
+
+<h1 id="utilities">Utilities:</h1>
+<p>Some essential tricks for DataFrames</p>
+
+<h2 id="create-new-columns">Create new columns</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'column'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'anotherColumn'</span><span class="p">]</span> <span class="o">=</span> <span class="s">''</span>
+</code></pre></div></div>
+<h2 id="iterate-row-by-row">Iterate row by row</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1">#do something
+</span></code></pre></div></div>
+<h2 id="assign-values-to-specific-cell">Assign values to specific cell</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">rowIndex</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">newValue</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="call-a-lambda-for-every-row-faster-than-a-for-loop">Call a lambda for every row (faster than a for loop)</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#axis=1 for rows, no columns
+</span></code></pre></div></div>
+<p>Can be used to assign values to a whole column too:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'column'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="drop-columns">Drop columns</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'columnX'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="drop-rows-which-are-not-included-in-a-set-of-indexes">Drop rows which are not included in a set of indexes</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sliced</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">indexes_to_keep</span><span class="p">))</span>
+</code></pre></div></div>
+<h2 id="create-a-column-with-the-mean-value-of-other-columns">Create a column with the mean value of other columns</h2>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'median'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">columnsSet</span><span class="p">))]</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># or
+</span><span class="n">df</span><span class="p">[</span><span class="s">'median'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># also workds for .mean() and .quantile(x)
+</span></code></pre></div></div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2019/01/10/montagem-ngs.html">
         Montagem NGS de Genomas
       </a>
     </h1>
 
     <span class="post-date">10 Jan 2019</span>
+    
+        <footer>
+          <span>Tags:</span>
+            
+              <span class="site-tag">
+                <a href="/tag/montagem"
+                    style="font-size: 80%">
+                        montagem; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/ngs"
+                    style="font-size: 80%">
+                        ngs; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/genoma"
+                    style="font-size: 80%">
+                        genoma; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/spades"
+                    style="font-size: 80%">
+                        spades; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/abyss"
+                    style="font-size: 80%">
+                        abyss; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/velvet"
+                    style="font-size: 80%">
+                        velvet; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/fastq"
+                    style="font-size: 80%">
+                        fastq; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/fasta"
+                    style="font-size: 80%">
+                        fasta; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/quast"
+                    style="font-size: 80%">
+                        quast; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/redundans"
+                    style="font-size: 80%">
+                        redundans; 
+                </a>
+              </span>
+            
+              <span class="site-tag">
+                <a href="/tag/pt-br"
+                    style="font-size: 80%">
+                        pt-br; 
+                </a>
+              </span>
+            
+        </footer>
+    
 
     <h1 id="o-que-é-montagem-de-sequências">O que é Montagem de Sequências?</h1>
 
@@ -469,229 +707,6 @@ SRR522243_1.fastq  SRR522245_1.fastq</p>
 <p>PS: O resultado “oficial” é o *.gap/scaffolds.filled.fa, porém ele é um symlink para o arquivo _gapcloser.1.2.fa, por isso escrevi comandos para copiar o arquivo do _gapcloser, senão poderiam acontecer problemas depois de excluir os arquivos originais.</p>
 
 <p>Agora, tente rodar o quast.py com os novos resultados em “final_scaffolds” e decida qual foi o melhor!</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2015/05/14/introducing-blackdoc.html">
-        Introducing BlackDoc
-      </a>
-    </h1>
-
-    <span class="post-date">14 May 2015</span>
-
-    <p>BlackDoc is a two-column <a href="http://jekyllrb.com">Jekyll</a> theme that’s ideal for websites that require a master-detail layout for viewing of content. It’s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler, and the <a href="http://hyde.getpoole.com">Hyde</a> theme.</p>
-
-<p>I needed a two-column layout with a scrolling sidebar to publish my <a href="http://karloespiritu.com/cheatsheets">code cheatsheets</a>, and found the <a href="http://hyde.getpoole.com">Hyde</a> Jekyll theme to be a good starting theme. To complement the color scheme of my main <a href="http://karloespiritu.com">website</a>, I customised the theme to make it look great in black background and changed the sidebar to display scrolling content. I created this theme because I can’t seem to find any good Jekyll theme with a master-detail layout. Hopefully, someone will find this useful as well in their own projects.</p>
-
-<h3 id="built-on-poole">Built on Poole</h3>
-
-<p>Poole is the Jekyll Butler, serving as a foundation for creating Jekyll themes. Poole-based themes, such as BlackDoc here, include the following:</p>
-
-<ul>
-  <li>Complete Jekyll setup included (layouts, config, <a href="/404">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
-  <li>Mobile friendly design and development</li>
-  <li>Easily scalable text and component sizing with <code class="highlighter-rouge">rem</code> units in the CSS</li>
-  <li>Support for a wide gamut of HTML elements</li>
-  <li>Related posts (time-based, because Jekyll) below each post</li>
-  <li>Syntax highlighting using Pygments (the Python-based code snippet highlighter)</li>
-</ul>
-
-<h3 id="blackdoc-features">BlackDoc Features</h3>
-
-<p>In addition to the features of <a href="http://getpoole.com">Poole</a> and <a href="http://hyde.getpoole.com">Hyde</a>, BlackDoc theme adds the following:</p>
-
-<ul>
-  <li>Scrolling sidebar with a thin scrollbar to allow displaying of numerous top-level content.</li>
-  <li>Elements and classes of the Hyde theme were updated to look great in black background. Check out the <a href="styles">Theme Styles</a> to see the stylings used in the theme.</li>
-</ul>
-
-<p>Check out the <code class="highlighter-rouge">Readme</code> of <a href="https://github.com/poole/poole">Poole</a> and <a href="https://github.com/poole/hyde">Hyde</a> theme to learn more about the features.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>BlackDoc theme supports most modern browsers and only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>BlackDoc is a free Jekyll theme and hosted with GitHub. Head to the <a href="https://github.com/karloespiritu/BlackDoc">GitHub repository</a> to download.</p>
-
-<p>Cheers!</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2012/02/07/example-content.html">
-        Example content
-      </a>
-    </h1>
-
-    <span class="post-date">07 Feb 2012</span>
-
-    <div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-</div>
-
-<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
-
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-
-<h2 id="inline-html-elements">Inline HTML elements</h2>
-
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-
-<ul>
-  <li><strong>To bold text</strong>, use <code class="highlighter-rouge">&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code class="highlighter-rouge">&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="highlighter-rouge">title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Mark otto</cite>, should use <code class="highlighter-rouge">&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code class="highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="highlighter-rouge">&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code class="highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="highlighter-rouge">&lt;sub&gt;</code>.</li>
-</ul>
-
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
-
-<h2 id="heading">Heading</h2>
-
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-<h3 id="code">Code</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis <code class="highlighter-rouge">code element</code> montes, nascetur ridiculus mus.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Example can be run directly in your JavaScript console
-</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
-</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"return a + b"</span><span class="p">);</span>
-
-<span class="c1">// Call the function
-</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span></code></pre></figure>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h3 id="gists-via-github-pages">Gists via GitHub Pages</h3>
-
-<p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
-
-<noscript><pre>400: Invalid request
-</pre></noscript>
-<script src="https://gist.github.com/5555251.js?file=gist.md"> </script>
-
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
-
-<h3 id="lists">Lists</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-
-<ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-</ol>
-
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-
-<dl>
-  <dt>HyperText Markup Language (HTML)</dt>
-  <dd>The language used to describe and define the content of a Web page</dd>
-
-  <dt>Cascading Style Sheets (CSS)</dt>
-  <dd>Used to describe the appearance of Web content</dd>
-
-  <dt>JavaScript (JS)</dt>
-  <dd>The programming language used to build advanced Web sites and applications</dd>
-</dl>
-
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<h3 id="images">Images</h3>
-
-<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
-
-<p><img src="http://placehold.it/800x400" alt="placeholder" title="Large example image" />
-<img src="http://placehold.it/400x200" alt="placeholder" title="Medium example image" />
-<img src="http://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
-
-<h3 id="tables">Tables</h3>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<hr />
-
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2012/02/06/whats-jekyll.html">
-        What's Jekyll?
-      </a>
-    </h1>
-
-    <span class="post-date">06 Feb 2012</span>
-
-    <p><a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From <a href="https://github.com/mojombo/jekyll/blob/master/README.markdown">the project’s readme</a>:</p>
-
-<blockquote>
-  <p>Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.</p>
-</blockquote>
-
-<p>Find out more by <a href="https://github.com/mojombo/jekyll">visiting the project on GitHub</a>.</p>
 
   </div>
   
