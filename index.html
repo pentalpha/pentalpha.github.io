@@ -1,37 +1,711 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en-us">
 
-<div class="posts">
-  {% for post in paginator.posts %}
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      pentalpha blog &middot; A personal blog on Bioinformatics (PT-BR and ENG-US)
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/blackdoc.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=EB+Garamond">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          pentalpha blog
+        </a>
+      </h1>
+      <p class="lead">A personal blog on bioinformatics and other things // Um blog pessoal incluindo, entre outras coisas, tutoriais sobre bioinformática</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item active" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/styles.html">Styles</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+      <hr>
+      <p class="sidebar-nav-item">Posts:</a>
+      
+      <ul>
+        
+          <li>
+            <a href="/2019/01/10/montagem-ngs.html">10 Jan 2019 - Montagem NGS de Genomas</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/14/introducing-blackdoc.html">14 May 2015 - Introducing BlackDoc</a>
+          </li>
+        
+          <li>
+            <a href="/2012/02/07/example-content.html">07 Feb 2012 - Example content</a>
+          </li>
+        
+          <li>
+            <a href="/2012/02/06/whats-jekyll.html">06 Feb 2012 - What's Jekyll?</a>
+          </li>
+        
+      </ul>
+      <hr>
+      <span class="sidebar-nav-item">Tag Cloud</span>
+      
+      
+      <span class="site-tag">
+          <a href="/tag/abyss/"
+              style="font-size: 84%">
+                  abyss (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/fasta/"
+              style="font-size: 84%">
+                  fasta (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/fastq/"
+              style="font-size: 84%">
+                  fastq (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/genoma/"
+              style="font-size: 84%">
+                  genoma (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/montagem/"
+              style="font-size: 84%">
+                  montagem (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/ngs/"
+              style="font-size: 84%">
+                  ngs (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/quast/"
+              style="font-size: 84%">
+                  quast (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/redundans/"
+              style="font-size: 84%">
+                  redundans (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/spades/"
+              style="font-size: 84%">
+                  spades (1)
+          </a>
+      </span>
+      
+      <span class="site-tag">
+          <a href="/tag/velvet/"
+              style="font-size: 84%">
+                  velvet (1)
+          </a>
+      </span>
+      
+
+      <!--<a class="sidebar-nav-item" href="https://github.com/pentalpha/pentalpha.github.io/archive/master.zip">Download</a>
+      <hr>-->
+      <a class="sidebar-nav-item" href="https://github.com/pentalpha/pentalpha.github.io">GitHub project</a>
+      <a class="sidebar-nav-item" href="https://github.com/karloespiritu/blackdoc">Theme</a>
+      <span class="sidebar-nav-item">Currently v2.0.1</span>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
   <div class="post">
     <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url | remove_first: '/'}}">
-        {{ post.title }}
+      <a href="/2019/01/10/montagem-ngs.html">
+        Montagem NGS de Genomas
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-date">10 Jan 2019</span>
 
-    {{ post.content }}
+    <h1 id="o-que-é-montagem-de-sequências">O que é Montagem de Sequências?</h1>
+
+<p>Em bioinformática, montagem de sequências se refere a alinhar e juntar fragmentos de sequências de DNA com o objetivo de reconstruir a sequência original. Isso é necessário, pois as técnologias de sequenciamento não podem ler um genoma inteiro de uma vez, muito pelo contrário, elas lêem pequenos fragmentos. As técnologias mais recentes (NGS), lêem fragmentos ainda menores que as Sanger.</p>
+
+<blockquote>
+  <p>O problema da montagem de sequencias pode ser comparado a pegar várias cópias de um livro, passar cada página delas por um triturador e então tentar reconstruir uma cópia do livro a partir dos fragmentos de texto restantes. (Wikipedia)</p>
+</blockquote>
+
+<p>Como é de se esperar, essa é uma tarefa computacionalmente complexa e intensiva. Existem muitos software disponíveis para fazer isso. Aqui, vamos dar instruções sobre como usar cada um deles.</p>
+
+<h1 id="um-guia-para-montagem-de-novo-a-partir-de-dados-de-ngs">Um guia para montagem De Novo a partir de dados de NGS</h1>
+
+<p>As principais ferramentas que vamos utilizar aqui:</p>
+
+<ol>
+  <li><a href="#1-prefetch">prefetch</a></li>
+  <li><a href="#2-fastq-dump">fastq-dump</a></li>
+  <li><a href="#3-option-a-spades">Option A: spades</a></li>
+  <li><a href="#4-option-b-abyss">Option B: abyss</a></li>
+  <li><a href="#5-option-c-SOAPdenovo">Option C: SOAPdenovo</a></li>
+  <li><a href="#6-option-d-velvet">Option C: Velvet</a></li>
+  <li><a href="#7-quast-e-redundans">Quast e Redundans: Analizando e melhorando os resultados</a></li>
+</ol>
+
+<p>Antes de prosseguir, abra um terminal para uma máquina Linux e entre na sua pasta pessoal. Então, crie uma pasta chamada “ngs-assembly” para guardar os arquivos gerados nesta tarefa.</p>
+
+<h1 id="1-prefetch">1. prefetch</h1>
+<p>Caso o prefetch não esteja instalado, use o seguinte comando para instalar ele, juntamente a todo o sra-toolkit:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>sra-toolkit
+</code></pre></div></div>
+
+<h2 id="11-aplicação">1.1. Aplicação</h2>
+
+<p>Neste exemplo, vamos baixar os dados SRA SRR522243 e ……245.</p>
+
+<h3 id="111-srr552224x">1.1.1. SRR552224X</h3>
+
+<blockquote>
+  <p>Illumina whole genome shotgun sequencing of genomic DNA paired-end library ‘Solexa-42867’ containing sample Rhodobacter LW1. <a href="https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=run_browser&amp;run=SRR522243">URL</a></p>
+</blockquote>
+
+<h3 id="112-baixando-os-dados">1.1.2. Baixando os dados.</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>prefetch SRR522243
+    <span class="nv">$ </span>prefetch SRR522245
+</code></pre></div></div>
+<p>Os arquivos não foram baixados para o seu diretório atual, eles provavelmente estão em alguma pasta do próprio sra-toolkit. Você precisa recuperar eles com o fastq-dump.</p>
+
+<p><a href="prefatch.md">For more info on prefatch</a></p>
+
+<h1 id="2-fastq-dump">2. fastq-dump</h1>
+
+<p>Basicamente é uma das ferramentas ‘*-dump’ do sra-toolkit.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>fastq-dump <span class="nt">--split-files</span> SRR522243
+    <span class="nv">$ </span>fastq-dump <span class="nt">--split-files</span> SRR522245
+</code></pre></div></div>
+<p>Isso vai criar os seguintes arquivos .fastq no seu diretório atual:
+SRR522243_2.fastq  SRR522245_2.fastq
+SRR522243_1.fastq  SRR522245_1.fastq</p>
+
+<p>Por causa do –split-files arg., há arquivos _1 e _2 files. Esses são os reads pareados.</p>
+
+<p>Agora vamos concatenar os arquivos fastq em dois arquivos, o das reads esquerdas e o das reads no sentido direito:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">cat </span>SRR522243_1.fastq  SRR522245_1.fastq <span class="o">&gt;</span> Rhodo_Hiseq_read1.fastq
+    <span class="nv">$ </span><span class="nb">cat </span>SRR522243_2.fastq  SRR522245_2.fastq <span class="o">&gt;</span> Rhodo_Hiseq_read2.fastq
+    <span class="nv">$ </span><span class="nb">mkdir </span>raw 
+    <span class="nv">$ </span><span class="nb">mv</span> <span class="k">*</span>_[12].fastq raw/
+    <span class="nv">$ </span>tree <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>O último comando, “tree .”, é uma dica de como ver não só os arquivos e sub-diretórios no diretório atual, como o conteúdo dos sub-diretórios.</p>
+
+<h1 id="3-option-a-spades">3. Option A: spades</h1>
+
+<p>Spades é um montador de genomas russo escrito em Python, bastante utilizado. Como todo montador deve(ria) fazer, ele recebe os fastqs e cria um arquivo .fasta com os contigs montados.
+<a href="http://cab.spbu.ru/software/spades/">Official Webpage</a></p>
+
+<h2 id="31-installation">3.1 Installation</h2>
+
+<p>Caso o spades já não esteja instalado, execute o comando na sua máquina:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>spades
+</code></pre></div></div>
+
+<h2 id="32-using-it">3.2 Using it</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>spades.py <span class="nt">-t</span> 8 <span class="nt">--pe1-1</span> Rhodo_Hiseq_read1.fastq <span class="nt">--pe1-2</span> Rhodo_Hiseq_read2.fastq <span class="nt">-o</span> SpadesOut
+
+    <span class="nv">$ </span>more SpadesOut/scaffolds.fasta
+
+    <span class="nv">$ </span>more SpadesOut/contigs.fasta
+</code></pre></div></div>
+
+<p>Vai demorar alguns minutinhos. Ele vai criar em torno de 3150 contigs a partir dos reads passados. Também há um arquivo de scaffolds, porém o número de sequências (3122) não é muito menor.</p>
+
+<p><a href="https://genome.jgi.doe.gov/help/scaffolds.jsf">For information on scaffolds</a></p>
+
+<p>O seguinte comando é um truque rápido para calcular o número de sequências em um arquivo .fasta, sem ter que recorrer ao quast:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cat</span> &lt;nome_do_arquivo&gt;.fasta | <span class="nb">grep</span> <span class="s2">"&gt;"</span> | <span class="nb">wc</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<h1 id="4-option-b-abyss">4. Option B: ABySS</h1>
+
+<p>O montador com o nome mais legal.</p>
+
+<blockquote>
+  <p>ABySS is a de novo, parallel, paired-end sequence assembler that is designed for short reads. (http://www.bcgsc.ca/platform/bioinfo/software/abyss)</p>
+</blockquote>
+
+<h2 id="41-installation">4.1. Installation</h2>
+
+<p>Caso ainda não esteja instalado:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>abyss
+</code></pre></div></div>
+
+<h2 id="42-using-it">4.2. Using it</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">mkdir </span>abyss
+    <span class="nv">$ </span><span class="nb">cd </span>abyss/
+    <span class="nv">$ </span>abyss-pe <span class="nv">k</span><span class="o">=</span>31 <span class="nv">l</span><span class="o">=</span>1 <span class="nv">n</span><span class="o">=</span>5 <span class="nv">s</span><span class="o">=</span>100 <span class="nv">np</span><span class="o">=</span>8 <span class="se">\</span>
+          <span class="nv">name</span><span class="o">=</span>Rhodo <span class="se">\</span>
+          <span class="nv">lib</span><span class="o">=</span><span class="s1">'reads'</span> <span class="se">\</span>
+          <span class="nv">reads</span><span class="o">=</span><span class="s1">'../Rhodo_Hiseq_read1.fastq ../Rhodo_Hiseq_read2.fastq'</span> <span class="se">\</span>
+          <span class="nv">aligner</span><span class="o">=</span>bowtie
+</code></pre></div></div>
+
+<p>É possível que ocorram problemas no MPI caso você esteja tentando usar paralelismo. Caso isso aconteça, tire o “np=8”.</p>
+
+<p>Foram produzidos 19998 contigs (Rhodo-contigs.fa) e 19842 scaffolds (Rhodo-scaffolds.fa).</p>
+
+<h1 id="5-option-c-soapdenovo">5. Option C: SOAPdenovo</h1>
+
+<h2 id="51-installation">5.1. Installation</h2>
+
+<p>#TODO</p>
+
+<h2 id="52-using-it">5.2. Using it</h2>
+
+<p>Primeiramente, para configurar a montagem, escreva um arquivo chamado “soap.config”:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">mkdir </span>soap
+    <span class="nv">$ </span><span class="nb">cd </span>soap
+    <span class="nv">$ </span>nano soap.config
+    <span class="nv">$ </span>SOAPdenovo-63mer all <span class="nt">-s</span> soap.config <span class="nt">-o</span> Rhodo <span class="nt">-F</span> <span class="nt">-R</span> <span class="nt">-E</span> <span class="nt">-w</span> <span class="nt">-u</span> <span class="nt">-K</span> 55 <span class="nt">-p</span> 8 <span class="o">&gt;&gt;</span> SOAPdenovo.log
+</code></pre></div></div>
+
+<p>O conteúdo é o seguinte:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>LIB]
+<span class="nv">avg_ins</span><span class="o">=</span>220
+
+<span class="nv">reverse_seq</span><span class="o">=</span>0
+
+<span class="nv">asm_flags</span><span class="o">=</span>3
+
+<span class="nv">rank</span><span class="o">=</span>1
+
+<span class="nv">q1</span><span class="o">=</span>../Rhodo_Hiseq_read1.fastq
+
+<span class="nv">q2</span><span class="o">=</span>../Rhodo_Hiseq_read2.fastq
+</code></pre></div></div>
+
+<p>O comando vai demorar cerca de 2 minutos, produzindo 3408 scaffolds (Rhodo.scafSeq) e 3426 contigs (Rhodo.contig).</p>
+
+<h1 id="6-option-d-velvet">6. Option D: Velvet</h1>
+<p>Sequence assembler for very short reads.</p>
+
+<h2 id="61-installation">6.1. Installation</h2>
+
+<p>On Ubuntu, install using apt-get:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>velvet
+</code></pre></div></div>
+<h2 id="62-using-it">6.2. Using it</h2>
+
+<p>Usar o velvet consiste de 2 passos: velveth para fazer o “hashing” dos reads e velvetg para resolver o grafo de bruijin, construindo assim a montagem.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>velveth velvet/ 31 <span class="nt">-shortPaired</span> <span class="nt">-fastq</span> <span class="nt">-separate</span> Rhodo_Hiseq_read1.fastq Rhodo_Hiseq_read2.fastq
+    <span class="nv">$ </span>velvetg velvet/ <span class="nt">-cov_cutoff</span> auto
+    <span class="nv">$ </span>more velvet/contigs.fa
+</code></pre></div></div>
+
+<h1 id="7-quast-e-redundans">7. Quast e Redundans</h1>
+<p>Copie tudo para um diretório só:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">mkdir </span>genomes/
+    <span class="nv">$ </span><span class="nb">cp </span>soap/Rhodo.scafSeq genomes/soap.scaff.fasta
+    <span class="nv">$ </span><span class="nb">cp </span>SpadesOut/scaffolds.fasta genomes/spades.scaff.fasta
+    <span class="nv">$ </span><span class="nb">cp </span>abyss/Rhodo-scaffolds.fa genomes/abyss.scaff.fasta
+    <span class="nv">$ </span><span class="nb">cp </span>velvet/contigs.fa genomes/velvet.contig.fasta
+</code></pre></div></div>
+
+<h2 id="71-quastpy">7.1. Quast.py</h2>
+<blockquote>
+  <p>QUAST-a quality assessment tool for evaluating and comparing genome assemblies. This tool improves on leading assembly comparison software with new ideas and quality metrics. QUAST can evaluate assemblies both with a reference genome, as well as without a reference. QUAST produces many reports, summary tables and plots to help scientists in their research and in their publications. <a href="https://www.ncbi.nlm.nih.gov/pubmed/23422339">QUAST: quality assessment tool for genome assemblies</a>;</p>
+</blockquote>
+
+<p>Você pode baixar a partir da <a href="http://quast.sourceforge.net/quast">sourceforge</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>quast.py <span class="nt">-o</span> quast_genomes/ genomes/<span class="k">*</span>
+    <span class="nv">$ </span><span class="nb">cd </span>quast_genomes
+    <span class="nv">$ </span><span class="nb">cat </span>report.txt
+</code></pre></div></div>
+
+<p>Ele vai gerar “reports” em diversos formatos (html, tsv, txt…). Inclusive é gerada uma página do icarus, que pode ser aberta usando um web-browser.</p>
+
+<h2 id="72-redundanspy">7.2. redundans.py:</h2>
+<p>O redundans.py é uma pipeline para fechar gaps e reduzir a redundância dos contigs de uma montagem.</p>
+
+<blockquote>
+  <p>Program takes as input assembled contigs, sequencing libraries and/or reference sequence and returns scaffolded homozygous genome assembly. Final assembly should be less fragmented and with total size smaller than the input contigs. In addition, Redundans will automatically close the gaps resulting from genome assembly or scaffolding. (<a href="https://github.com/lpryszcz/redundans">Github</a>)</p>
+</blockquote>
+
+<p>Hora de executar ele para cada uma das nossas montagens:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>redundans.py <span class="nt">-v</span> <span class="nt">-i</span> ../<span class="k">*</span>.fastq <span class="nt">-f</span> abyss.scaff.fasta <span class="nt">-o</span> abyss.gap <span class="nt">-t</span> 8
+    <span class="nv">$ </span>redundans.py <span class="nt">-v</span> <span class="nt">-i</span> ../<span class="k">*</span>.fastq <span class="nt">-f</span> spades.scaff.fasta <span class="nt">-o</span> spades.gap <span class="nt">-t</span> 8
+    <span class="nv">$ </span>redundans.py <span class="nt">-v</span> <span class="nt">-i</span> ../<span class="k">*</span>.fastq <span class="nt">-f</span> soap.scaff.fasta <span class="nt">-o</span> soap.gap <span class="nt">-t</span> 8
+    <span class="nv">$ </span>redundans.py <span class="nt">-v</span> <span class="nt">-i</span> ../<span class="k">*</span>.fastq <span class="nt">-f</span> velvet.contig.fasta <span class="nt">-o</span> velvet.gap <span class="nt">-t</span> 8
+</code></pre></div></div>
+
+<p>Ao final da execução, o redundans.py exibe uma pequena tabela com estatísticas (semelhante às do quast) sobre as sequências do arquivo de entrada e de cada arquivo gerado. Leia ela para ver o quanto cada montagem melhorou depois de passar pelo redundans.py.</p>
+
+<p>Agora, vamos copiar os scaffolds produzidos pelo redundans.py para uma pasta propria e excluir os outros arquivos gerados:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">mkdir </span>final_scaffolds
+    <span class="nv">$ </span><span class="nb">mv </span>abyss.gap/_gapcloser.1.2.fa final_scaffolds/abyss.fasta
+    <span class="nv">$ </span><span class="nb">mv </span>soap.gap/_gapcloser.1.2.fa final_scaffolds/soap.fasta
+    <span class="nv">$ </span><span class="nb">mv </span>spades.gap/_gapcloser.1.2.fa final_scaffolds/spades.fasta
+    <span class="nv">$ </span><span class="nb">mv </span>velvet.gap/_gapcloser.1.2.fa final_scaffolds/velvet.fasta
+    <span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-Rf</span> <span class="k">*</span>.gap/
+    <span class="nv">$ </span><span class="nb">rm</span> <span class="k">*</span>.fai
+</code></pre></div></div>
+<p>PS: O resultado “oficial” é o *.gap/scaffolds.filled.fa, porém ele é um symlink para o arquivo _gapcloser.1.2.fa, por isso escrevi comandos para copiar o arquivo do _gapcloser, senão poderiam acontecer problemas depois de excluir os arquivos originais.</p>
+
+<p>Agora, tente rodar o quast.py com os novos resultados em “final_scaffolds” e decida qual foi o melhor!</p>
+
   </div>
-  {% endfor %}
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2015/05/14/introducing-blackdoc.html">
+        Introducing BlackDoc
+      </a>
+    </h1>
+
+    <span class="post-date">14 May 2015</span>
+
+    <p>BlackDoc is a two-column <a href="http://jekyllrb.com">Jekyll</a> theme that’s ideal for websites that require a master-detail layout for viewing of content. It’s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler, and the <a href="http://hyde.getpoole.com">Hyde</a> theme.</p>
+
+<p>I needed a two-column layout with a scrolling sidebar to publish my <a href="http://karloespiritu.com/cheatsheets">code cheatsheets</a>, and found the <a href="http://hyde.getpoole.com">Hyde</a> Jekyll theme to be a good starting theme. To complement the color scheme of my main <a href="http://karloespiritu.com">website</a>, I customised the theme to make it look great in black background and changed the sidebar to display scrolling content. I created this theme because I can’t seem to find any good Jekyll theme with a master-detail layout. Hopefully, someone will find this useful as well in their own projects.</p>
+
+<h3 id="built-on-poole">Built on Poole</h3>
+
+<p>Poole is the Jekyll Butler, serving as a foundation for creating Jekyll themes. Poole-based themes, such as BlackDoc here, include the following:</p>
+
+<ul>
+  <li>Complete Jekyll setup included (layouts, config, <a href="/404">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
+  <li>Mobile friendly design and development</li>
+  <li>Easily scalable text and component sizing with <code class="highlighter-rouge">rem</code> units in the CSS</li>
+  <li>Support for a wide gamut of HTML elements</li>
+  <li>Related posts (time-based, because Jekyll) below each post</li>
+  <li>Syntax highlighting using Pygments (the Python-based code snippet highlighter)</li>
+</ul>
+
+<h3 id="blackdoc-features">BlackDoc Features</h3>
+
+<p>In addition to the features of <a href="http://getpoole.com">Poole</a> and <a href="http://hyde.getpoole.com">Hyde</a>, BlackDoc theme adds the following:</p>
+
+<ul>
+  <li>Scrolling sidebar with a thin scrollbar to allow displaying of numerous top-level content.</li>
+  <li>Elements and classes of the Hyde theme were updated to look great in black background. Check out the <a href="styles">Theme Styles</a> to see the stylings used in the theme.</li>
+</ul>
+
+<p>Check out the <code class="highlighter-rouge">Readme</code> of <a href="https://github.com/poole/poole">Poole</a> and <a href="https://github.com/poole/hyde">Hyde</a> theme to learn more about the features.</p>
+
+<h3 id="browser-support">Browser support</h3>
+
+<p>BlackDoc theme supports most modern browsers and only compatible with Internet Explorer 9 and above.</p>
+
+<h3 id="download">Download</h3>
+
+<p>BlackDoc is a free Jekyll theme and hosted with GitHub. Head to the <a href="https://github.com/karloespiritu/BlackDoc">GitHub repository</a> to download.</p>
+
+<p>Cheers!</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2012/02/07/example-content.html">
+        Example content
+      </a>
+    </h1>
+
+    <span class="post-date">07 Feb 2012</span>
+
+    <div class="message">
+  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
+</div>
+
+<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+
+<blockquote>
+  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+</blockquote>
+
+<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+<h2 id="inline-html-elements">Inline HTML elements</h2>
+
+<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+
+<ul>
+  <li><strong>To bold text</strong>, use <code class="highlighter-rouge">&lt;strong&gt;</code>.</li>
+  <li><em>To italicize text</em>, use <code class="highlighter-rouge">&lt;em&gt;</code>.</li>
+  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="highlighter-rouge">title</code> attribute for the full phrase.</li>
+  <li>Citations, like <cite>— Mark otto</cite>, should use <code class="highlighter-rouge">&lt;cite&gt;</code>.</li>
+  <li><del>Deleted</del> text should use <code class="highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="highlighter-rouge">&lt;ins&gt;</code>.</li>
+  <li>Superscript <sup>text</sup> uses <code class="highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="highlighter-rouge">&lt;sub&gt;</code>.</li>
+</ul>
+
+<p>Most of these elements are styled by browsers with few modifications on our part.</p>
+
+<h2 id="heading">Heading</h2>
+
+<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+<h3 id="code">Code</h3>
+
+<p>Cum sociis natoque penatibus et magnis dis <code class="highlighter-rouge">code element</code> montes, nascetur ridiculus mus.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Example can be run directly in your JavaScript console
+</span>
+
+<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
+</span>
+<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"return a + b"</span><span class="p">);</span>
+
+<span class="c1">// Call the function
+</span>
+<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<span class="c1">// &gt; 8</span></code></pre></figure>
+
+<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+
+<h3 id="gists-via-github-pages">Gists via GitHub Pages</h3>
+
+<p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
+
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/5555251.js?file=gist.md"> </script>
+
+<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
+
+<h3 id="lists">Lists</h3>
+
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+<ul>
+  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+  <li>Donec id elit non mi porta gravida at eget metus.</li>
+  <li>Nulla vitae elit libero, a pharetra augue.</li>
+</ul>
+
+<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+
+<ol>
+  <li>Vestibulum id ligula porta felis euismod semper.</li>
+  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+</ol>
+
+<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+
+<dl>
+  <dt>HyperText Markup Language (HTML)</dt>
+  <dd>The language used to describe and define the content of a Web page</dd>
+
+  <dt>Cascading Style Sheets (CSS)</dt>
+  <dd>Used to describe the appearance of Web content</dd>
+
+  <dt>JavaScript (JS)</dt>
+  <dd>The programming language used to build advanced Web sites and applications</dd>
+</dl>
+
+<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+
+<h3 id="images">Images</h3>
+
+<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
+
+<p><img src="http://placehold.it/800x400" alt="placeholder" title="Large example image" />
+<img src="http://placehold.it/400x200" alt="placeholder" title="Medium example image" />
+<img src="http://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
+
+<h3 id="tables">Tables</h3>
+
+<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Totals</td>
+      <td>21</td>
+      <td>23</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Charlie</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+
+<hr />
+
+<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2012/02/06/whats-jekyll.html">
+        What's Jekyll?
+      </a>
+    </h1>
+
+    <span class="post-date">06 Feb 2012</span>
+
+    <p><a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From <a href="https://github.com/mojombo/jekyll/blob/master/README.markdown">the project’s readme</a>:</p>
+
+<blockquote>
+  <p>Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.</p>
+</blockquote>
+
+<p>Find out more by <a href="https://github.com/mojombo/jekyll">visiting the project on GitHub</a>.</p>
+
+  </div>
+  
 </div>
 
 <div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
+  
     <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
+  
+  
     <span class="pagination-item newer">Newer</span>
-  {% endif %}
+  
 </div>
+    </div>
+
+  </body>
+</html>
