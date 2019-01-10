@@ -26,9 +26,20 @@
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/master.zip">Download</a>
+      <p class="sidebar-nav-item">Posts:</a>
       <hr>
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url }}">{{ post.date | date_to_string }} - {{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <!--<a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/master.zip">Download</a>
+      <hr>-->
       <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+      <a class="sidebar-nav-item" href="https://github.com/karloespiritu/blackdoc">Theme</a>
       <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
 
